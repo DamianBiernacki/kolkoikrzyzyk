@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+
+body {
+  font-family: sans-serif;
+}
+.cover {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px
+}
+
+.board {
+  display: grid; 
+  grid-template-columns: 200px 200px 200px;
+  grid-template-rows: 200px 200px 200px;
+  grid-gap: 10px 20px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 5px solid black
+}
+
+.boardItem {
+  background-color: lightcyan; 
+  border-radius: 5px;
+  border: 5px solid black;
+  transition: all .05s linear;
+  cursor: pointer;
+  position: relative;
+}
+
+.boardItem:hover {
+  background-color: lightgreen;
+}
+
+.boardItem--full-X::after, .boardItem--full-X::before{
+  position: absolute;
+  content: '';
+  height: 5px;
+  width: 100%;
+  top: 50%;
+  left: 0;
+  background-color: darkred;
+}
+
+.boardItem--full-X::before{
+  transform: translateY(-50%) rotate(-45deg);
+}
+
+.boardItem--full-X::after{
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.boardItem--full-O::before{
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  border: 5px solid darkblue;
+  width: 80%;
+  height: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.information{
+  height: 100px;
+  font-size: 50px;
+  font-weight: 1000;
+}
+
+.restart {
+  background-color: lightcyan;
+  margin-top: 15px;
+  padding: 10px 40px;
+  border: 3px solid black;
+  border-radius: 5px;
+  transition: all .05s linear;
+}
+
+.restart:hover {
+  background-color: lightgreen;
+}
